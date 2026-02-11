@@ -23,9 +23,9 @@ connectDB(process.env.MONGO_URI).catch(err => {
 });
 
 // Routes
-app.use("/api/auth", authRoutes);
-app.use("/api/quiz", quizRoutes);
-app.use("/api/quiz", resultsRoutes); // note: submit uses /quiz/submit; results uses /quiz/:userId? But we exposed results as /quiz/submit and /results/:userId earlier in frontend. To align with frontend, we will also mount results separately below.
+app.use("/auth", authRoutes);
+app.use("/quiz", quizRoutes);
+app.use("/quiz", resultsRoutes); // note: submit uses /quiz/submit; results uses /quiz/:userId? But we exposed results as /quiz/submit and /results/:userId earlier in frontend. To align with frontend, we will also mount results separately below.
 
 // Provide /results routes
 import resultsRoutes2 from "./routes/results.js";
